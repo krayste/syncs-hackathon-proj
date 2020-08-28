@@ -23,7 +23,7 @@ def get_assessments(unit_url):
 
     except ValueError as ve:
         # If there is no match for "Type", do nothing
-        print("No tables of the assessment found")
+        #print("No tables of the assessment found")
         raise ValueError("No Assessment Table found")
 
     rows = [row for row in table.itertuples()]
