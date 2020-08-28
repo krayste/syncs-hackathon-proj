@@ -122,6 +122,7 @@ def scrape_unit_obj(unit_code, unit_string, year = '2020', sem_code = 'S2C'):
     unit = u.Unit()
     unit.code = unit_code 
     unit.name = unit_string
+    unit.has_final = False
 
     unit_url = find_url(unit_code, year, sem_code)
     scrape(unit_url, unit)
