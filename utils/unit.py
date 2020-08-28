@@ -23,7 +23,7 @@ class Unit:
 class Assessment:
 	def __init__(self):
 		# Reference to a unit object 
-		self.unit = unit
+		self.unit = None
 
 		self.type_str = None
 		self.description_title = None
