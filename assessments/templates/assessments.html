@@ -1,8 +1,17 @@
 {% extends "base.html" %}
+
+{% block head_content %}
+{% load static %}
+<title>Product Name</title>
+<link rel="stylesheet" href="{% static 'assessments_styles.css' %}">
+{% endblock %}
+
 {% block body_content %}
 <body>
-    <div class="px-3">
+
+    <div class="px-3 test">
         <h1>Hallo, Welt!</h1>
     </div>
+
 </body>
 {% endblock %}
