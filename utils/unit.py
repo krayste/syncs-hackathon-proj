@@ -83,11 +83,16 @@ def test_filling():
 	schedule.add_topic(topic)
 
 	assessment = Assessment()
-	assessment.set_weight_desc_body("")
+	assessment.set_weight_desc_body("50%", "Written Final Exam", "It covers all aspects of this unit.")
+	assessment.set_due_strings("Formal exam period", True)
+	assessment.set_length("2 hours")
 
 	unit = Unit()
 	unit.set_names("Object Oriented Programming", "INFO1113")
+	unit.add_assessment(assessment)
+	unit.add_schedule(schedule)
+	return unit
 
 
 if __name__ == "__main__":
-	print("Test")
+	unit = test_filling()
