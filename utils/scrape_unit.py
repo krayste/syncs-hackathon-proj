@@ -55,7 +55,7 @@ def get_assessments(unit_url,unit):
         # TODO - implement final exam checking 
         assessment.set_due_strings(due_string, False, due_date = due_date)
 
-        assessment.set_length(row.Length)
+        assessment.set_length(str(row.Length))
 
         unit.add_assessment(assessment)
         # print(assessment)
@@ -72,27 +72,59 @@ def get_schedule(unit_url, unit):
 
     table = tables[0]
     rows = [row for row in table.itertuples()]
+    schedule = u.Schedule()
+    schedule.set_week(rows[0][1])
+    for row in rows:
+        if row[1].strip() == schedule.wk_str:
+            # create new topic in current schedule object 
+            topic = u.Topic()
+            topic.set_schedule(schedule)
+            topic.set_topic_learn(row[2], row[3])
+            schedule.add_topic(topic)
+        else:
+            if schedule.wk_str:
+
+                # Create a new schedule object and fill in attrs 
+                unit.add_schedule(schedule)
+                schedule = u.Schedule()
+                # link upwards
+                schedule.set_unit(unit)
+                schedule.set_week(row[1])
+
+                # create new topic for the new schedule object
+                topic = u.Topic()
+                topic.set_schedule(schedule)
+                topic.set_topic_learn(row[2], row[3])
+                schedule.add_topic(topic)
+
+            # create a new schedule objet and append a new topic 
+
+        # schedule = u.Schedule()
+        # schedule.set_unit(unit)
+
 
     # [print(row) for row in rows]
+
     # print(tables)
 
 
 def scrape(unit_url, unit):
-    assessments = get_assessments(unit_url, unit)
-    schedule = get_schedule(unit_url,unit)
+    get_assessments(unit_url, unit)
+    get_schedule(unit_url,unit)
 
 
 def scrape_unit_obj(unit_code, year = '2020', sem_code = 'S2C'):
     unit = u.Unit()
-    unit.name = unit_code 
+    unit.code = unit_code 
 
     unit_url = find_url(unit_code, year, sem_code)
     scrape(unit_url, unit)
 
     print(unit)
     
+    return unit
     # go to that url
-    # create unit object with the name givne
+    # create unit object with the name given
     # populate the attributes other than the lists
     # start populating the lists with new instances of the assessment objects and schedule object
     # return hte object 

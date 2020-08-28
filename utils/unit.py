@@ -24,8 +24,8 @@ class Unit:
         string = "Name = {}\n".format(self.name)
         for ass in self.list_of_assessments:
             string += str(ass)
-        # for sched in self.list_of_schedules:
-            # string += str(sched)
+        for sched in self.list_of_schedules:
+            string += str(sched)
         return string
 
 class Assessment:
@@ -100,6 +100,13 @@ class Schedule:
         ''' Appends a topic object to the list of topics '''
         self.list_of_topics.append(topic)
 
+    def __repr__(self):
+        string = self.wk_str + " "
+        for topic in self.list_of_topics:
+            string += str(topic) + "\n"
+
+        return string 
+
 class Topic:
     def __init__(self):
         self.schedule = None
@@ -113,6 +120,9 @@ class Topic:
     def set_topic_learn(self, topic_str, learning_str):
         self.topic_str = topic_str
         self.learning_str = learning_str
+
+    def __repr__(self):
+        return "{}: {}".format(self.topic_str, self.learning_str)
 
 def test_filling():
     # Test filling out an object INCOMPLETE
