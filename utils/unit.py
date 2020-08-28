@@ -20,6 +20,13 @@ class Unit:
         ''' Appends a blank schedule object to the unit's list '''
         self.list_of_schedules.append(schedule)
 
+    def __repr__(self):
+        string = "Name = {}\n".format(self.name)
+        for ass in self.list_of_assessments:
+            string += str(ass)
+        # for sched in self.list_of_schedules:
+            # string += str(sched)
+        return string
 
 class Assessment:
     def __init__(self):
@@ -60,6 +67,20 @@ class Assessment:
     def set_length(self, length):
         ''' Sets the length string attribute '''
         self.length = length 
+
+    def __repr__(self):
+        string = ""
+        string += "Type: " + self.type_str + "\n"
+        string += "Desc: " + self.description_title + "\n"
+        string += "Body: " + self.description_body + "\n"
+        string += "Weight: " + self.weight + "\n"
+        string += "Due: " + self.due_str + "\n"
+        if self.due_date:
+            string += "Date: " + self.due_date + "\n"
+        string += "Final? " + str(self.is_final) + "\n"
+        string += "Length: " + self.length + "\n"
+        return string
+
 
 class Schedule:
     def __init__(self):
