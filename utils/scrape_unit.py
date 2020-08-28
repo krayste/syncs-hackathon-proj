@@ -9,19 +9,30 @@ def get_assessments(unit_url):
     try:
         # Read 
         tables = pd.read_html(unit_url, match="Type", header = 0)
+
+        # Remove every second row (gets rid of outcomes assessed)
         tables = [table.iloc[::2] for table in tables]
-        tables[0].drop(tables[0].index(len(tables[0])-1))
+
+        # Drop the last row of the table since 
+        table = tables[0][:-1]
+
     except ValueError as ve:
-        # If there is no match for "Part", do nothing
+        # If there is no match for "Type", do nothing
         print("No tables of the assessment found")
-        return
-    rows = [row for row in tables[0].itertuples()]
+        raise ValueError("No Assessment Table found")
+
+    rows = [row for row in table.itertuples()]
     for row in rows:
         print("Type = {}, Desc. = {}, Weight = {}, Due = {}, Length = {}".format(row.Type.split("  ")[0], row.Description.split("  ")[0], row.Weight.split("  ")[0], row.Due.split("  ")[0], row.Length))
         due_string = row.Due.split("  ")
         if len(due_string) > 1:# and due_string[1].startswith("Due Date:"):
+            # this is the specific due date for a subject if it is given
+            print(due_string[1][10:])
 
-            print(due_string[1])
+        description = row.Description.split("  ")
+        if len(description) > 1:
+            print("Desc Title = {}".format(description[0]))
+            print("Desc Body = {}".format(description[1]))
 
 def get_schedule(unit_url):
     # Regex for get_html matches the assessments table on the usyd website
