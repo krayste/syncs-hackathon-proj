@@ -1,11 +1,16 @@
 import pandas as pd
 import sys
+import unit 
+
 def find_url(unit_code, year, sem_code):
     # Returns the url for a given unit code
     return "https://www.sydney.edu.au/units/" + unit_code + "/" + str(year) + "-" + sem_code.upper() + "-ND-CC"
 
 def get_assessments(unit_url):
     # Regex for get_html matches the assessments table on the usyd website
+
+    assessment = unit.Assessment()
+
     try:
         # Read 
         tables = pd.read_html(unit_url, match="Type", header = 0)
@@ -23,6 +28,7 @@ def get_assessments(unit_url):
 
     rows = [row for row in table.itertuples()]
     for row in rows:
+
         print("Type = {}, Desc. = {}, Weight = {}, Due = {}, Length = {}".format(row.Type.split("  ")[0], row.Description.split("  ")[0], row.Weight.split("  ")[0], row.Due.split("  ")[0], row.Length))
         due_string = row.Due.split("  ")
         if len(due_string) > 1:# and due_string[1].startswith("Due Date:"):
@@ -41,15 +47,21 @@ def get_schedule(unit_url):
     except ValueError as ve:
         # If there is no match for "Part", do nothing
         print("No tables of the schedule type found")
-        return
+        raise ValueError("No Schedule Table found")
+
+    table = tables[0]
+    rows = [row for row in table.itertuples()]
+
+    [print(row) for row in rows]
     print(tables)
+
 
 def scrape(unit_url):
     assessments = get_assessments(unit_url)
     schedule = get_schedule(unit_url)
 
 
-def get_unit_obj(unit_code, year = '2020', sem_code = 'S2C'):
+def scrape_unit_obj(unit_code, year = '2020', sem_code = 'S2C'):
     unit_url = find_url(unit_code, year, sem_code)
     scrape(unit_url)    
     
@@ -62,7 +74,7 @@ def get_unit_obj(unit_code, year = '2020', sem_code = 'S2C'):
 def main():
     if len(sys.argv) == 2:
         unit_code = sys.argv[1]
-        get_unit_obj(unit_code)
+        scrape_unit_obj(unit_code)
 
 
 if __name__ == '__main__':
