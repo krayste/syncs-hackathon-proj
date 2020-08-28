@@ -18,12 +18,12 @@ def get_assessments(unit_url):
 
     except ValueError as ve:
         # If there is no match for "Type", do nothing
-        print("No tables of the assessment found")
+        #print("No tables of the assessment found")
         raise ValueError("No Assessment Table found")
 
     rows = [row for row in table.itertuples()]
     for row in rows:
-        print("Type = {}, Desc. = {}, Weight = {}, Due = {}, Length = {}".format(row.Type.split("  ")[0], row.Description.split("  ")[0], row.Weight.split("  ")[0], row.Due.split("  ")[0], row.Length))
+        #print("Type = {}, Desc. = {}, Weight = {}, Due = {}, Length = {}".format(row.Type.split("  ")[0], row.Description.split("  ")[0], row.Weight.split("  ")[0], row.Due.split("  ")[0], row.Length))
         due_string = row.Due.split("  ")
         if len(due_string) > 1:# and due_string[1].startswith("Due Date:"):
             # this is the specific due date for a subject if it is given
