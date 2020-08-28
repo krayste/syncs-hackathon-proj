@@ -1,6 +1,7 @@
 import pandas as pd
 import sys
-import unit as u
+from urllib.error import HTTPError
+import utils.unit as u
 
 def find_url(unit_code, year, sem_code):
     # Returns the url for a given unit code
@@ -25,6 +26,8 @@ def get_assessments(unit_url,unit):
         # If there is no match for "Type", do nothing
         #print("No tables of the assessment found")
         raise ValueError("No Assessment Table found")
+    except HTTPError as he:
+        raise ValueError("Unit website does not exist") 
 
     rows = [row for row in table.itertuples()]
 
@@ -37,7 +40,7 @@ def get_assessments(unit_url,unit):
         assessment.set_type_str(row.Type.split("  ")[0])
 
         weight = row.Weight.split("  ")[0]
-        description = row.Description.split("  ")
+        description = str(row.Description).split("  ")
         body = None
 
         if len(description) > 1:
@@ -72,6 +75,8 @@ def get_schedule(unit_url, unit):
 
     table = tables[0]
     rows = [row for row in table.itertuples()]
+    if len(rows) < 2:
+        return
     schedule = u.Schedule()
     schedule.set_week(rows[0][1])
     for row in rows:
@@ -113,26 +118,30 @@ def scrape(unit_url, unit):
     get_schedule(unit_url,unit)
 
 
-def scrape_unit_obj(unit_code, year = '2020', sem_code = 'S2C'):
+def scrape_unit_obj(unit_code, unit_string, year = '2020', sem_code = 'S2C'):
     unit = u.Unit()
     unit.code = unit_code 
+    unit.name = unit_string
 
     unit_url = find_url(unit_code, year, sem_code)
     scrape(unit_url, unit)
 
-    print(unit)
+    #print(unit)
     
     return unit
     # go to that url
     # create unit object with the name given
     # populate the attributes other than the lists
     # start populating the lists with new instances of the assessment objects and schedule object
-    # return hte object 
+    # return the object 
 
 def main():
     if len(sys.argv) == 2:
         unit_code = sys.argv[1]
         scrape_unit_obj(unit_code)
+    else:
+        pass
+        # open unit.txt file 
 
 
 if __name__ == '__main__':
