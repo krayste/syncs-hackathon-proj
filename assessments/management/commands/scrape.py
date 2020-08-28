@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand
 from django.utils import timezone
-import assessments.models
+from assessments.models import DB_Unit
 import utils.find_subj as find
 import utils.scrape_unit as scrape
 
@@ -19,10 +19,11 @@ class Command(BaseCommand):
         	print(ting)
         	(code, name) = ting.split("&")
         	try:
-        		scrape.scrape_unit_obj(code, name)
+        		print("1")
+        		unit_obj = scrape.scrape_unit_obj(code, name)
         	except ValueError as ve:
         		if str(ve) == "Unit website does not exist":
-        			print("going to next website")
+        			# print("going to next website")
         			f = open("nonExists.txt", "a")
         			f.write("{}\n".format(code))
         			f.close()
@@ -30,6 +31,14 @@ class Command(BaseCommand):
         			continue
         		else:
         			raise ValueError()
+        	print("2")
+        	if DB_Unit.objects.filter(code=unit_obj.code).count() > 0:
+        		unit_db = DB_Unit.objects.get(code=unit_obj.code)
+        	else:
+        		unit_db = DB_Unit()
+        	print("3")
+        	unit_db.save_from_obj(unit_obj)	
+        	print("4")
         	print("Saving unit {}: {} to database".format(code, name))
         # Print time of scraping end to the console
         time = timezone.now().strftime('%X')
