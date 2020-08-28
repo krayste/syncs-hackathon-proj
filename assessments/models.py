@@ -8,7 +8,8 @@ from utils.unit import Topic as Topic_obj
 class DB_Unit(models.Model):
     name = models.CharField(max_length=200)
     code = models.CharField(max_length=200)
-    has_final = models.BooleanField(default = False)
+    has_final = models.BooleanField(default=False)
+    active = models.BooleanField(default=False)
 
     # save a python unit object to the database
     def save_from_obj(self, unit_obj):
@@ -19,13 +20,11 @@ class DB_Unit(models.Model):
         self.save()
 
         for assessment_obj in unit_obj.list_of_assessments:
-            print("3.25")
             if DB_Assessment.objects.filter(unit=self, description_title=assessment_obj.description_title).count() > 0:
                 assessment_db = DB_Assessment.objects.get(
                     unit=self, description_title=assessment_obj.description_title)
             else:
                 assessment_db = DB_Assessment()
-            print("3.35")
             assessment_db.unit = self
             assessment_db.type_str = assessment_obj.type_str
             assessment_db.description_title = assessment_obj.description_title
@@ -35,8 +34,8 @@ class DB_Unit(models.Model):
             assessment_db.due_date = assessment_obj.due_date
             assessment_db.is_final = assessment_obj.is_final
             assessment_db.length = assessment_obj.length
+            assessment_db.active = True
             assessment_db.save()
-            print("3.45")
         for schedule_obj in unit_obj.list_of_schedules:
             if DB_Schedule.objects.filter(unit=self, wk_str=schedule_obj.wk_str).count() > 0:
                 schedule_db = DB_Schedule.objects.get(
@@ -45,6 +44,7 @@ class DB_Unit(models.Model):
                 schedule_db = DB_Schedule()
             schedule_db.unit = self
             schedule_db.wk_str = schedule_obj.wk_str
+            schedule_db.active = True
             schedule_db.save()
 
             for topic_obj in schedule_obj.list_of_topics:
@@ -56,7 +56,7 @@ class DB_Unit(models.Model):
                 topic_db.schedule = schedule_db
                 topic_db.topic_str = topic_obj.topic_str
                 topic_db.learning_str = topic_obj.learning_str
-                print("3.5")
+                topic_db.active = True
                 topic_db.save()
 
     # returns a python object constructed from the unit database object
@@ -105,14 +105,17 @@ class DB_Assessment(models.Model):
     due_date = models.CharField(max_length=200, null=True)
     is_final = models.BooleanField(default=False)
     length = models.CharField(max_length=200)
+    active = models.BooleanField(default=False)
 
 
 class DB_Schedule(models.Model):
     unit = models.ForeignKey(DB_Unit, on_delete=models.CASCADE)
     wk_str = models.CharField(max_length=200)
+    active = models.BooleanField(default=False)
 
 
 class DB_Topic(models.Model):
     topic_str = models.CharField(max_length=200)
     learning_str = models.CharField(max_length=200)
     schedule = models.ForeignKey(DB_Schedule, on_delete=models.CASCADE)
+    active = models.BooleanField(default=False)
