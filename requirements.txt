@@ -12,4 +12,5 @@ pytz==2020.1
 six==1.15.0
 sqlparse==0.3.1
 TatSu==5.5.0
+whitenoise==5.2.0
 wkhtmltopdf==0.2
