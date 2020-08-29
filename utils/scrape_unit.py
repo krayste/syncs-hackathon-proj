@@ -67,7 +67,7 @@ def get_assessments(unit_url,unit):
 def get_schedule(unit_url, unit):
     # Regex for get_html matches the assessments table on the usyd website
     try:
-        tables = pd.read_html(unit_url, match="WK", header = 0)
+        tables = pd.read_html(unit_url, match="^WK$", header = 0)
     except ValueError as ve:
         # If there is no match for "Part", do nothing
         print("No tables of the schedule type found")
@@ -80,6 +80,7 @@ def get_schedule(unit_url, unit):
     schedule = u.Schedule()
     schedule.set_week(rows[0][1])
     for row in rows:
+        print(row)
         if row[1].strip() == schedule.wk_str:
             # create new topic in current schedule object 
             topic = u.Topic()

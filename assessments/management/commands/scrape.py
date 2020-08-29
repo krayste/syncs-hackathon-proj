@@ -8,8 +8,10 @@ import utils.scrape_unit as scrape
 class Command(BaseCommand):
     help = 'Scrape unit information from the web and update database'
 
+
     def handle(self, *args, **kwargs):
 
+        single_subj = kwargs.get("single", None)
         # Print time of scraping start to the console
         time = timezone.now().strftime('%X')
         print('Scraping URLs started at %s\n' % time, end="")
@@ -20,7 +22,13 @@ class Command(BaseCommand):
         DB_Schedule.objects.all().update(active=False)
         DB_Topic.objects.all().update(active=False)
 
-        thing = find.get_all_unit_codes()
+        if not single_subj:
+            thing = find.get_all_unit_codes()
+        else:
+            thing = find.get_one_unit_code(single_subj)
+            thing = [thing]
+            print(thing)
+            
         for ting in thing:
             print(ting)
             (code, name) = ting.split("&")
@@ -52,3 +60,8 @@ class Command(BaseCommand):
         # Print time of scraping end to the console
         time = timezone.now().strftime('%X')
         print('\nUnits all saved to database at %s\n' % time, end="")
+
+    def add_arguments(self,parser):
+        parser.add_argument('single', type=str, nargs='?', default="")
+
+
