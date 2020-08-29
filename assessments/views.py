@@ -2,6 +2,7 @@ from django.shortcuts import render
 from assessments.models import DB_Unit
 from django.http import HttpResponse
 from utils.unit import Assessment
+import utils.identify_finals as i_f
 from django.template.loader import render_to_string
 
 
@@ -34,10 +35,16 @@ def generate(request):
         for unit in list_of_units:
             list_of_assessments.extend(unit.list_of_assessments)
 
+        for a in list_of_assessments:
+            i_f.identify_finals(a)
         assessments_dict = Assessment.create_dictionary(
             list_of_assessments)
+        unit_codes = [unit.code for unit in list_of_units]
 
-        context = {"assessments_dict": assessments_dict}
+        context = {
+            "assessments_dict": assessments_dict,
+            "unit_codes": unit_codes,
+        }
         assessments_html = render_to_string(
             'assessment_disp.html', context)
 

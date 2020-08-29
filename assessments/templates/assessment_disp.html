@@ -1,0 +1,41 @@
+
+
+<div class="container col-md-12">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 folder">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Assessments</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Content</a>
+            <div class="dropdown-menu">
+                {% for code in unit_codes %}
+                    <a class="dropdown-item">{{code}}</a>
+                {% endfor %}
+            </div>
+          </li>
+        </ul>
+        <div id="folder-content">
+            {% for key, value in assessments_dict.items %}
+                {% if forloop.first %}<h5>Ongoing Assessments</h5>
+                {% elif forloop.last%}<hr/><h5>Final Exam</h5>
+                {% elif value|length > 0 %}<hr/><h5>Week {{key}}</h5>
+
+                    {% for a in value %}
+                    <p class="mb-0">
+                        {{a.unit.code}}: {{a.type_str}} {{a.description_title}}
+                        <span class="text-muted">
+                            {% if a.due_date != None %}{{a.due_date}}{% endif %} {{a.weight}}
+                        </span>
+                    </p>
+                    {% endfor %}
+
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>
