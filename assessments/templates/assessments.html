@@ -22,7 +22,12 @@
                 <div class="col-md-8" id="unit-select-container">
                   <div class = "logo-container">
                     <div class = "logo">
-                      <img src = "{% static 'logo.png' %}" width=300wh></img>Your streamlined assessment calendar.
+                      <div class="row">
+                        <div class="col-md-4">
+                          <img src = "{% static 'logo.png' %}" class="logo-img"></img>
+                        </div>
+                        <div class="col-md-8 logo-img"><div class="vertically-centre"><h1>Your streamlined assessment calendar.</h1></div></div>
+                      </div>
                     </div>
                   </div>
                   <h2 class="mb-4 landing-title">Choose your units</h2>
@@ -36,7 +41,7 @@
               </div>
             </div>
             <div class="text-center mt-5">
-            <button id="generatebutton" type="submit" name="generatebutton" value="selected" class="btn btn-primary btn-lg">Generate</button>
+            <button id="generatebutton" type="submit" name="generatebutton" value="selected" class="btn btn-primary btn-lg btn-extra">Generate</button>
             </div>
             </div>
             </fieldset>
@@ -46,7 +51,7 @@
 
             </div>
     </form>
-    
+
 </body>
 {% endblock %}
 
