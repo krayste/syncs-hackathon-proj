@@ -25,6 +25,10 @@ $('#folder')
 // submit timetable form using ajax
 $("#assessments-form").submit(function(e) {
     e.preventDefault(); // avoid to execute the actual submit of the form.
+    $('#folder').show();
+    //loading icon
+    $('#folder').html('<div class="lds-ring-parent"><div class="lds-ring-child"><div class="lds-ring"><div></div><div></div><div></div><div></div></div><div class="lds-ring-text my-3">Loading ...</div></div></div>');
+    scrollToLink( $('#folder'));
     var form = $(this);
     var url = form.attr('action');
     $.ajax({
@@ -46,6 +50,19 @@ $("#assessments-form").submit(function(e) {
             }
          });
 });
+
+// button to auto scroll down to form start
+var DELAY_SCROLLING = 1000;  // animation time in ms
+
+function scrollToLink(link) {
+  selectLink = $(link);
+  if ( selectLink.length ) {
+    var top = selectLink.offset().top;
+    $('body,html').stop().animate({scrollTop: top}, DELAY_SCROLLING);
+  } else {
+    console.log('The link is not found: ' + link);
+  }
+}
 
 
 // $("#pdfbutton").click(function(e) {
