@@ -48,15 +48,15 @@ def create_md_string(list_of_assessments):
 	|==|==|==|==|==|\n'''
 	for assessment in list_of_assessments:
 		new_line = "|\n"
-		new_line += assessment.unit.code + " |\n"
-		new_line += assessment.type_str + " |\n"
-		new_line += assessment.description_title + " |\n"
-		new_line += assessment.weight + " |\n"
-		new_line += assessment.due_str + " |\n"
+		new_line += "| " +assessment.unit.code + " |\n"
+		new_line += "| " +assessment.type_str + " |\n"
+		new_line += "| " +assessment.description_title + " |\n"
+		new_line += "| " +assessment.weight + " |\n"
+		new_line += "| " +assessment.due_str + " |\n"
 		string += new_line + "\n" 
 
 	return string
 
 def string_to_pdf(markdown_string):
-	output = pypandoc.convert_text(markdown_string, 'pdf', outputfile="../output.pdf", format="md", extra_args=['-H','../static_files/options.sty'])
+	output = pypandoc.convert_text(markdown_string, 'pdf', outputfile="../output.pdf", format="md", extra_args=['-H','static_files/options.sty'])
 	return
