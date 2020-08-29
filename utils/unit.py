@@ -1,3 +1,4 @@
+import arrow
 
 class Unit:
     def __init__(self):
@@ -67,6 +68,55 @@ class Assessment:
     def set_length(self, length):
         ''' Sets the length string attribute '''
         self.length = length 
+
+    def get_week(self):
+        
+        # hard code the date of start of august
+        start = arrow.get("24-08-2020", "DD-MM-YYYY")
+        midsem_break = 8
+
+        if self.due_str.startswith("Week"):
+            return int(self.due_str.split()[1])
+
+        # in case it is an ongoing assessment
+        if self.due_date == None:
+            return None
+
+        date = arrow.get(self.due_date, "DD MMM YYYY")
+        diff = date - start
+        week = diff.days % 7
+        if week > midsem_break:
+            week -= 1
+
+        return week
+
+    # static method for sorting a list of assessments into a dictionary
+    # based on 
+    def create_dictionary(assessments):
+
+        ass_dict = {}
+
+        # week 0 = ongoing, week 13 = final exam
+        for i in range(14):
+            ass_dict[i] = []
+
+        for ass in assessments:
+
+            if ass.is_final:
+                ass_dict[13].append(ass)
+
+            elif ass.due_str.startswith("Week"):
+                week = int(ass.due_str.split()[1])
+                ass_dict[week].append(ass)
+
+            else:
+                ass_dict[0].append(ass)
+
+        for key in ass_dict.keys():
+            print(key)
+            print(ass_dict[key])
+
+        return ass_dict
 
     def __repr__(self):
         string = ""
