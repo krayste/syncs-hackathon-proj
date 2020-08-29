@@ -89,7 +89,7 @@ class DB_Unit(models.Model):
                 topic_obj = Topic_obj()
                 topic_obj.schedule = schedule_obj
                 topic_obj.topic_str = topic_db.topic_str
-                topic_obj.length_str = topic_db.length_str
+                topic_obj.learning_str = topic_db.learning_str
                 schedule_obj.list_of_topics.append(topic_obj)
 
         return unit_obj
