@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from assessments.models import DB_Unit
 from django.http import HttpResponse
+from utils.unit import Assessment
+from django.template.loader import render_to_string
 
 
 def assessments(request):
@@ -18,6 +20,7 @@ def generate(request):
     if request.method == "POST":
         # Create list of unit objects according to website input
         list_of_units = []
+        list_of_assessments = []
         unit_codes = request.POST.getlist('units')
         # If no units are selected, do nothing
         if not unit_codes:
@@ -28,4 +31,14 @@ def generate(request):
             unit_obj = unit_db.obj()
             list_of_units.append(unit_obj)
 
-        return HttpResponse('')
+        for unit in list_of_units:
+            list_of_assessments.extend(unit.list_of_assessments)
+
+        assessments_dict = Assessment.create_dictionary(
+            list_of_assessments)
+
+        context = {"assessments_dict": assessments_dict}
+        assessments_html = render_to_string(
+            'assessment_disp.html', context)
+
+        return HttpResponse(assessments_html)
