@@ -5,8 +5,10 @@ ics==0.7
 lxml==4.5.2
 numpy==1.19.1
 pandas==1.1.1
+pypandoc==1.5
 python-dateutil==2.8.1
 pytz==2020.1
 six==1.15.0
 sqlparse==0.3.1
 TatSu==5.5.0
+wkhtmltopdf==0.2
