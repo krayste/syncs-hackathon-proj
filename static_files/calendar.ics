@@ -2,75 +2,135 @@ BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:The Null Pointers
 BEGIN:VEVENT
-DESCRIPTION:Written exam
-DTSTART:20201012T000000Z
-SUMMARY:ACCT2011: Mid-semester exam (weighting: 20%)
-UID:1e184246-0e87-410e-9f29-aa4f232f9409@1e18.org
+DESCRIPTION:Freehand Sketching\, Detail / Assembly Drawing & Tolerancing
+DTSTART:20200925T000000Z
+SUMMARY:MECH2400: Assignment A - Engineering Graphics and Tolerancing (weighting: 25%)
+UID:7839beb8-d00b-4247-becc-084a7760117f@7839.org
 END:VEVENT
 BEGIN:VEVENT
-DESCRIPTION:ACCT2011: Mid-semester exam (weighting: 20%)\nACCT3011: Mid-session exam (weighting: 20%)\n
-DTSTART:20201005T000000Z
-SUMMARY:Week 7 Assessments
-UID:88a59f69-17e2-4812-8c57-f8b148716d71@88a5.org
+DESCRIPTION:In-class assessment
+DTSTART:20201016T000000Z
+SUMMARY:AMME2301: Quiz (weighting: 10%)
+UID:fb45c3e1-35ec-4cd4-83af-b42cc4e5c7ee@fb45.org
 END:VEVENT
 BEGIN:VEVENT
-DESCRIPTION:Written task
-DTSTART:20201102T000000Z
-SUMMARY:ACCT2011: Individual assignment (weighting: 20%)
-UID:27306563-f547-464f-bdf4-a52c67e326f9@2730.org
+DESCRIPTION:AMME2301: Assignment 3 (weighting: 10%)\nMECH2400: Assignment D - Power Transmission Element Design (weighting: 25%)\n
+DTSTART:20201116T000000Z
+SUMMARY:Week 12 Assessments
+UID:c5a0aea5-5cc5-4a67-9b9e-816de403f1fa@c5a0.org
 END:VEVENT
 BEGIN:VEVENT
-DESCRIPTION:ACCT2011: Individual assignment (weighting: 20%)\nACCT3011: Group assignment (weighting: 10%)\n
-DTSTART:20201102T000000Z
-SUMMARY:Week 10 Assessments
-UID:c6133bf9-fa18-4f00-b215-8389e336cb28@c613.org
+DESCRIPTION:Component Analysis
+DTSTART:20201023T000000Z
+SUMMARY:MECH2400: Assignment B - Component Analysis (weighting: 25%)
+UID:19ed5e17-0c0c-4214-a654-189616c59d29@19ed.org
 END:VEVENT
 BEGIN:VEVENT
-DESCRIPTION:ACCT2019: SAP assignment (weighting: 15%)\n
-DTSTART:20201109T000000Z
-SUMMARY:Week 11 Assessments
-UID:a361f791-8ff7-4f61-8343-1ffb2daead24@a361.org
+DESCRIPTION:Design\, Build and Test
+DTSTART:20201106T000000Z
+SUMMARY:MECH2400: Assignment C - Design\, Build and Test (weighting: 25%)
+UID:8fd09e6d-b132-4ceb-8569-bf2abe1cc271@8fd0.org
 END:VEVENT
 BEGIN:VEVENT
-DESCRIPTION:Case study
-DTSTART:20201112T000000Z
-SUMMARY:ACCT2019: SAP assignment (weighting: 15%)
-UID:4172b383-058d-4cde-a4fc-75a575586674@4172.org
+DESCRIPTION:Assignment for wk 10-12
+DTSTART:20201121T000000Z
+SUMMARY:AMME2301: Assignment 3 (weighting: 10%)
+UID:2e26ad0b-5530-4730-acb3-7ccb43857c52@2e26.org
 END:VEVENT
 BEGIN:VEVENT
-DESCRIPTION:Written and numerical questions
-DTSTART:20201013T000000Z
-SUMMARY:ACCT3011: Mid-session exam (weighting: 20%)
-UID:d5d132e3-e757-48b0-86a7-28ed6f66565d@d5d1.org
+DESCRIPTION:Students are required to solve theoretic questions in attitude dynamics.
+DTSTART:20201106T000000Z
+SUMMARY:AERO2705: Assignment 3 (weighting: 20%)
+UID:50417dc7-81d9-4a38-aef0-58a524471096@5041.org
 END:VEVENT
 BEGIN:VEVENT
-DESCRIPTION:ACCT3011: Individual Assignment (weighting: 10%)\n
-DTSTART:20200907T000000Z
-SUMMARY:Week 3 Assessments
-UID:03334aea-ac49-4edb-8f17-0852a06e964d@0333.org
+DESCRIPTION:Assignment for the wk 6-9
+DTSTART:20201031T000000Z
+SUMMARY:AMME2301: Assignment 2 (weighting: 10%)
+UID:0eb2c3b2-a052-4278-bc88-a1b127fcd35f@0eb2.org
 END:VEVENT
 BEGIN:VEVENT
-DESCRIPTION:ACCT1006: Mid-semester exam (weighting: 25%)\n
+DESCRIPTION:AERO2705: Assignment 1 (weighting: 20%)\n
+DTSTART:20200914T000000Z
+SUMMARY:Week 4 Assessments
+UID:c2eb9ecb-d705-4d4d-ad3c-059abd0c3088@c2eb.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:MECH2400: Assignment B - Component Analysis (weighting: 25%)\n
 DTSTART:20201019T000000Z
 SUMMARY:Week 8 Assessments
-UID:adfe4813-a2e9-48bd-a221-d6cd6ef276fd@adfe.org
+UID:a12dd35e-8072-46fc-bcfa-23ea9d269fef@a12d.org
 END:VEVENT
 BEGIN:VEVENT
-DESCRIPTION:Written task
-DTSTART:20200911T000000Z
-SUMMARY:ACCT3011: Individual Assignment (weighting: 10%)
-UID:03c404c9-a6b2-48d1-a9aa-f6534c05ad7f@03c4.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Written task
-DTSTART:20201105T000000Z
-SUMMARY:ACCT3011: Group assignment (weighting: 10%)
-UID:84371139-ddb7-4977-a3d1-5feb26758bf5@8437.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:ACCT1006: Final exam (weighting: 50%)\nACCT2011: Final exam (weighting: 50%)\nACCT2019: Final exam (weighting: 50%)\nACCT3011: Final exam (weighting: 50%)\n
+DESCRIPTION:AERO2705: Group project designed by Optus (weighting: 30%)\nAERO2705: Student seminar (weighting: 10%)\nAMME2301: Final Exam (weighting: 50%)\nELEC2104: Final exam (weighting: 70%)\n
 DTSTART:20201130T000000Z
 SUMMARY:Your final exams
-UID:3f23bd90-3ec0-4efb-8d34-23d3e8864d70@3f23.org
+UID:d6edb8ae-7cce-42d5-9bae-c76373d7b0b1@d6ed.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:AMME2301: Assignment 2 (weighting: 10%)\n
+DTSTART:20201026T000000Z
+SUMMARY:Week 9 Assessments
+UID:d4ebe9f4-0955-453d-8988-c133e8b59037@d4eb.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Type C：Online open book without invigilation. 2hours\; final exam period
+DTSTART:20201211T000000Z
+SUMMARY:AMME2301: Final Exam (weighting: 50%)
+UID:8f241eea-c692-42d1-95b3-9f06cec01951@8f24.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Students are required to solve theoretic questions in orbital mechanics.
+DTSTART:20201016T000000Z
+SUMMARY:AERO2705: Assignment 2 (weighting: 20%)
+UID:b0ce3937-1546-464c-93ec-0791fbcc50f4@b0ce.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Each group will develop a space system and submit a report within 20 pages.
+DTSTART:20201211T000000Z
+SUMMARY:AERO2705: Group project designed by Optus (weighting: 30%)
+UID:9f463cd3-ab70-4c4e-8adf-51125bcca92f@9f46.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:AERO2705: Assignment 3 (weighting: 20%)\nAMME2301: Laboratory (weighting: 10%)\nMECH2400: Assignment C - Design\, Build and Test (weighting: 25%)\n
+DTSTART:20201102T000000Z
+SUMMARY:Week 10 Assessments
+UID:0e37e421-0ee1-402a-b98e-5b2cb6b893bd@0e37.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Students are required to solve theoretic questions in rocket dynamics.
+DTSTART:20200918T000000Z
+SUMMARY:AERO2705: Assignment 1 (weighting: 20%)
+UID:3b666f5a-c276-4e18-b5c2-731571c06eba@3b66.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Assignment for the wk 1-5
+DTSTART:20200926T000000Z
+SUMMARY:AMME2301: Assignment 1 (weighting: 10%)
+UID:1092b639-2a6c-4d13-8e52-fde37fad48b0@1092.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Lab report
+DTSTART:20201107T000000Z
+SUMMARY:AMME2301: Laboratory (weighting: 10%)
+UID:5a536209-25d6-4340-8bc7-7b48dd0a93d3@5a53.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Power Transmission Analysis
+DTSTART:20201120T000000Z
+SUMMARY:MECH2400: Assignment D - Power Transmission Element Design (weighting: 25%)
+UID:8263ad5b-3e40-48eb-9436-dd75c49c97c6@8263.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:AMME2301: Assignment 1 (weighting: 10%)\nMECH2400: Assignment A - Engineering Graphics and Tolerancing (weighting: 25%)\n
+DTSTART:20200921T000000Z
+SUMMARY:Week 5 Assessments
+UID:1898ccbc-245f-45a0-9e20-b75852de7bef@1898.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:AERO2705: Assignment 2 (weighting: 20%)\nAMME2301: Quiz (weighting: 10%)\n
+DTSTART:20201005T000000Z
+SUMMARY:Week 7 Assessments
+UID:bbbe3c24-1f9c-4c5a-9244-c454194a9f06@bbbe.org
 END:VEVENT
 END:VCALENDAR
