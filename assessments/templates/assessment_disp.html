@@ -23,7 +23,7 @@
         <div id="folder-assessment" class="folder">
             {% for key, value in assessments_dict.items %}
                 {% if forloop.first %}<h5>Ongoing Assessments</h5>
-                {% elif forloop.last%}<hr/><h5>Final Exam</h5>
+                {% elif forloop.last and value|length > 0%}<hr/><h5>Final Exam</h5>
 
                     {% for a in value %}
                     <p class="mb-0">
