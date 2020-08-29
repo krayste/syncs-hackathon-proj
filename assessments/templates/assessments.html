@@ -33,25 +33,10 @@
 
             </fieldset>
 
-            <div class="container col-md-12">
-              <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-8 folder">
-                    <ul class="nav nav-tabs">
-                      <li class="nav-item">
-                        <a class="nav-link active" href="#">Assessments</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Content</a>
-                      </li>
-                    </ul>
-                    <div id="folder-content">
+            <!-- Folder with tabs -->
+            <div id="folder">
 
-                    </div>
-                </div>
-                <div class="col-md-2"></div>
-              </div>
-          </div>
+            </div>
     </form>
     <div> 
         <a id="pdfbutton" type="submit" href="{% url 'send_pdf_file' %}" role= "button" name="pdfbutton" value="selected" class="btn btn-primary btn-lg">Download</a>
