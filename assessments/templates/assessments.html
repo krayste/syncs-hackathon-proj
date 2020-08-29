@@ -2,7 +2,7 @@
 
 {% block head_content %}
 {% load static %}
-<title>Product Name</title>
+<title>SemSum - Your semester at a glance</title>
 <link rel="stylesheet" href="{% static 'assessments_styles.css' %}">
 {% endblock %}
 
@@ -14,11 +14,13 @@
 
             <!-- Unit dropdown -->
             <fieldset>
+
+            <div class="landing-container">
             <div class="container col-md-12">
               <div class="row">
                 <div class="col-md-2"></div>
                 <div class="col-md-8" id="unit-select-container">
-                  <h2 class="mb-4">Choose your units</h2>
+                  <h2 class="mb-4 landing-title">Choose your units</h2>
                   <select action="/unit_select" name="units" class="selectpicker" id="unit-select" data-none-results-text="No results matched" data-live-search-placeholder="Search..." data-live-search="true" data-display="static" data-dropup-auto="false" multiple="multiple" data-width="100%" title="Select your units...">
                     {% for unit in unit_list %}
                       <option title="{{unit.code}}" value="{{unit.code}}" name="{{unit.code}}">{{unit.code}} – {{unit.name}}</option>
@@ -28,32 +30,18 @@
                 <div class="col-md-2"></div>
               </div>
             </div>
-
+            <div class="text-center mt-5">
             <button id="generatebutton" type="submit" name="generatebutton" value="selected" class="btn btn-primary btn-lg">Generate</button>
-
+            </div>
+            </div>
             </fieldset>
 
-            <div class="container col-md-12">
-              <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-8 folder">
-                    <ul class="nav nav-tabs">
-                      <li class="nav-item">
-                        <a class="nav-link active" href="#">Assessments</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Content</a>
-                      </li>
-                    </ul>
-                    <div id="folder-content">
+            <!-- Folder with tabs -->
+            <div id="folder" class="full-height" style="display: none;">
 
-                    </div>
-                </div>
-                <div class="col-md-2"></div>
-              </div>
-          </div>
+            </div>
     </form>
-
+    
 </body>
 {% endblock %}
 

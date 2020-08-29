@@ -30,10 +30,8 @@ def order_ass(units):
     ordered_ass = []
     for key in sorted(ass_dict.keys()):
 
-		current = ass_dict[key]
-		current.sort()
-		for ass in current:
-			ordered_ass.append(ass)
+        for ass in ass_dict[key]:
+            ordered_ass.append(ass)
 
     return ordered_ass
 

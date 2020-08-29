@@ -1,6 +1,34 @@
+// change to content tab
+$('#folder')
+.on('click', '.content-unit-dropdown', function(e){
+    e.preventDefault()
+    var unit = $(this).attr('data-unit');
+    $('#folder-assessment').hide()
+    $('.folder-content-unit').hide()
+    $('#folder-content').show()
+    $('#folder-content-'+ unit +'').show()
+    $('#assessment-tab').removeClass('active')
+    $('#content-tab').addClass('active')
+});
+
+// change to assessment tab
+$('#folder')
+.on('click', '#assessment-tab', function(e){
+    e.preventDefault()
+    $('.folder-content-unit').hide()
+    $('#folder-content').hide()
+    $('#folder-assessment').show()
+    $('#assessment-tab').addClass('active')
+    $('#content-tab').removeClass('active')
+});
+
 // submit timetable form using ajax
 $("#assessments-form").submit(function(e) {
     e.preventDefault(); // avoid to execute the actual submit of the form.
+    $('#folder').show();
+    //loading icon
+    $('#folder').html('<div class="lds-ring-parent"><div class="lds-ring-child"><div class="lds-ring"><div></div><div></div><div></div><div></div></div><div class="lds-ring-text my-3">Loading ...</div></div></div>');
+    scrollToLink( $('#folder'));
     var form = $(this);
     var url = form.attr('action');
     $.ajax({
@@ -11,7 +39,7 @@ $("#assessments-form").submit(function(e) {
 
             // handle a successful response
             success : function(data) {
-                $('#folder-content').html(data)
+                $('#folder').html(data)
             },
 
             // handle a non-successful response
@@ -22,6 +50,48 @@ $("#assessments-form").submit(function(e) {
             }
          });
 });
+
+// button to auto scroll down to form start
+var DELAY_SCROLLING = 1000;  // animation time in ms
+
+function scrollToLink(link) {
+  selectLink = $(link);
+  if ( selectLink.length ) {
+    var top = selectLink.offset().top;
+    $('body,html').stop().animate({scrollTop: top}, DELAY_SCROLLING);
+  } else {
+    console.log('The link is not found: ' + link);
+  }
+}
+
+
+// $("#pdfbutton").click(function(e) {
+//     e.preventDefault(); // avoid to execute the actual submit of the form.
+//     var form = $(this);
+//     var url = form.attr('action');
+//     $.ajaxSetup({
+//         headers: { "X-CSRFToken": getCookie("csrftoken")}
+//     });
+//     $.ajax({
+//            type: "POST",
+//            url: url,
+//            dataType: 'pdf',
+
+//             // handle a successful response
+//             success : function(data) {
+//                 console.log("Success lmao")
+//             },
+
+//             // handle a non-successful response
+//             error : function(xhr,errmsg,err) {
+//                 $('#results').html("<div class='alert-box alert radius' data-alert>Oops! We have encountered an error: "+errmsg+
+//                     " <a href='#' class='close'>&times;</a></div>"); // add the error to the dom
+//                 console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+//             }
+//          });
+// });
+
+
 
 // prevent automatic selection events across browsers (fixed Safari issue)
 function pauseEvent(e){
@@ -66,3 +136,20 @@ function deleteUnit(e){
 function pillUnit(e){
     e.stopPropagation()
 };
+
+// cookie function used for finding csrf token
+function getCookie(c_name)
+{
+    if (document.cookie.length > 0)
+    {
+        c_start = document.cookie.indexOf(c_name + "=");
+        if (c_start != -1)
+        {
+            c_start = c_start + c_name.length + 1;
+            c_end = document.cookie.indexOf(";", c_start);
+            if (c_end == -1) c_end = document.cookie.length;
+            return unescape(document.cookie.substring(c_start,c_end));
+        }
+    }
+    return "";
+ }
