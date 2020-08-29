@@ -13,7 +13,7 @@ body, html{
 }
 
 .landing-title{
-  margin-top: 30vh;
+  margin-top: 10vh;
 }
 
 .dropdown-tall-title{
@@ -104,4 +104,16 @@ body, html{
   top: 30%;
   font-size: 16px;
   margin:-100px;
+}
+
+.logo-container{
+  margin-top: 13vh;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.logo{
+  display: inline-block;
+  font-size: 45px;
 }

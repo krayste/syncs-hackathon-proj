@@ -2,159 +2,81 @@ BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:The Null Pointers
 BEGIN:VEVENT
-DESCRIPTION:Weekly tutorial activity
-DTSTART:20201001T000000Z
-SUMMARY:AMME4710: Tutorial Activity: Week 6 (weighting: 1.66%)
-UID:32ce412a-9a09-4a00-b99f-c5cefd64f37d@32ce.org
+DESCRIPTION:Students are required to solve theoretic questions in orbital mechanics.
+DTSTART:20201016T000000Z
+SUMMARY:AERO2705: Assignment 2 (weighting: 20%)
+UID:9c17bd87-6488-47aa-b2ca-4f627aa5abeb@9c17.org
 END:VEVENT
 BEGIN:VEVENT
-DESCRIPTION:Group major project presentation
-DTSTART:20201116T000000Z
-SUMMARY:AMME4710: Project presentation (weighting: 20%)
-UID:29083fd8-003d-4b7a-8803-63b4099b81ee@2908.org
+DESCRIPTION:Unit of work
+DTSTART:20200917T000000Z
+SUMMARY:EDUP4067: Developing a STEM integrated STEM unit of work (weighting: 50%)
+UID:b7f6e146-b010-459e-8c75-74807d42c71e@b7f6.org
 END:VEVENT
 BEGIN:VEVENT
-DESCRIPTION:Weekly tutorial activity
-DTSTART:20200827T000000Z
-SUMMARY:AMME4710: Tutorial Activity: Week 1 (weighting: 1.67%)
-UID:bacab177-6753-4c1b-89a6-e95ea73523a8@baca.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Weekly tutorial activity
-DTSTART:20201008T000000Z
-SUMMARY:AMME4710: Tutorial Activity: Week 7 (weighting: 1.66%)
-UID:3324e6e4-79fe-43b6-8675-eae42dfddb3d@3324.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:AMME4710: Tutorial Activity: Week 2 (weighting: 1.67%)\n
-DTSTART:20200831T000000Z
-SUMMARY:Week 2 Assessments
-UID:b5312a5f-3555-43c0-a847-cc3b518a23b9@b531.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:AMME4710: Tutorial Activity: Week 1 (weighting: 1.67%)\n
-DTSTART:20200824T000000Z
-SUMMARY:Week 1 Assessments
-UID:5b6b59ad-4915-4e58-a0fa-5c2b793d9dae@5b6b.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:ACCT3400: Group Plan (weighting: 20%)\nAMME4710: Tutorial Activity: Week 5 (weighting: 1.67%)\n
-DTSTART:20200921T000000Z
-SUMMARY:Week 5 Assessments
-UID:e1859aa2-5c8e-40fe-8f75-1ad79f007904@e185.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Weekly tutorial activity
-DTSTART:20200903T000000Z
-SUMMARY:AMME4710: Tutorial Activity: Week 2 (weighting: 1.67%)
-UID:5eb374ec-968b-425a-99a2-a0f8e0f40179@5eb3.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:ACCT3400: Individual Statement (weighting: 20%)\nAMME4710: Assignment 2 (weighting: 20%)\nBUSS7902: Test (weighting: 10%)\n
-DTSTART:20201019T000000Z
-SUMMARY:Week 8 Assessments
-UID:82b52ee7-cc51-4eae-9586-3b7e149cdc47@82b5.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Computer-based exam
-DTSTART:20200420T000000Z
-SUMMARY:BUSS7902: Test (weighting: 10%)
-UID:9413ef0a-eaac-40e1-abda-16528743e8ce@9413.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Written task
-DTSTART:20200927T000000Z
-SUMMARY:ACCT3400: Group Plan (weighting: 20%)
-UID:a6a010ab-80ef-406f-88e1-291097db1e4b@a6a0.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Weekly tutorial activity
-DTSTART:20200910T000000Z
-SUMMARY:AMME4710: Tutorial Activity: Week 3 (weighting: 1.67%)
-UID:8de8ccb6-022f-4fd6-9171-80292325c13c@8de8.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:AMME4710: Assignment 1 (weighting: 20%)\n
-DTSTART:20200914T000000Z
-SUMMARY:Week 4 Assessments
-UID:a9e80b00-98fb-4641-ac5d-efaf82b22bf9@a9e8.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:AMME4710: Tutorial Activity: Week 3 (weighting: 1.67%)\n
-DTSTART:20200907T000000Z
-SUMMARY:Week 3 Assessments
-UID:9f24cb68-da8f-4fa3-95ff-ec19a6cb1425@9f24.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:AMME4710: Tutorial Activity: Week 7 (weighting: 1.66%)\n
-DTSTART:20201005T000000Z
-SUMMARY:Week 7 Assessments
-UID:8dc6f93c-0258-4899-966f-c8bf549d3283@8dc6.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Assignment report and code\, submitted via Turnitin and email
-DTSTART:20201025T000000Z
-SUMMARY:AMME4710: Assignment 2 (weighting: 20%)
-UID:30187f7d-26a7-4058-9e8a-dd8fe7113af0@3018.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:ACCT3400: Group Project Report (weighting: 50%)\nAMME4710: Project presentation (weighting: 20%)\nAMME4710: Major project final report (weighting: 30%)\nASNS2661: Take-home assessment task (weighting: 45%)\nBUSS7902: Assignment 1 (weighting: 40%)\n
+DESCRIPTION:ACCT3015: Assignment (weighting: 25%)\n
 DTSTART:20201116T000000Z
 SUMMARY:Week 12 Assessments
-UID:25db6af6-d9ec-42a4-9092-f023a27cff5e@25db.org
+UID:169ea657-e2e3-4958-afe5-23e2e1d1c341@169e.org
 END:VEVENT
 BEGIN:VEVENT
-DESCRIPTION:Data analysis and problem solving
-DTSTART:20200501T000000Z
-SUMMARY:BUSS7902: Assignment 1 (weighting: 40%)
-UID:e0df5ecf-6dc2-434e-8375-bd4801d08d8b@e0df.org
+DESCRIPTION:Each group will develop a space system and submit a report within 20 pages.
+DTSTART:20201211T000000Z
+SUMMARY:AERO2705: Group project designed by Optus (weighting: 30%)
+UID:e962b386-085f-4c00-acf2-5fc396e3bb6d@e962.org
 END:VEVENT
 BEGIN:VEVENT
-DESCRIPTION:Report
-DTSTART:20201122T000000Z
-SUMMARY:ACCT3400: Group Project Report (weighting: 50%)
-UID:23fd69ee-515b-4bba-ad89-3ee7f8b101ad@23fd.org
+DESCRIPTION:Students are required to solve theoretic questions in rocket dynamics.
+DTSTART:20200918T000000Z
+SUMMARY:AERO2705: Assignment 1 (weighting: 20%)
+UID:2cb889dd-8b35-43e6-86a7-8c19a194a1b6@2cb8.org
 END:VEVENT
 BEGIN:VEVENT
-DESCRIPTION:Group major project final report
-DTSTART:20201120T000000Z
-SUMMARY:AMME4710: Major project final report (weighting: 30%)
-UID:e4ae294a-a92b-4635-a5f4-f1a335c6449a@e4ae.org
+DESCRIPTION:AERO2705: Assignment 1 (weighting: 20%)\nEDUP4067: Developing a STEM integrated STEM unit of work (weighting: 50%)\n
+DTSTART:20200914T000000Z
+SUMMARY:Week 4 Assessments
+UID:60016d01-0fe7-4366-8d95-26fa20b1da48@6001.org
 END:VEVENT
 BEGIN:VEVENT
-DESCRIPTION:AMME4710: Tutorial Activity: Week 6 (weighting: 1.66%)\n
+DESCRIPTION:AERO2705: Assignment 3 (weighting: 20%)\n
+DTSTART:20201102T000000Z
+SUMMARY:Week 10 Assessments
+UID:0589de7e-eea0-41c1-93b4-ec39af2375b0@0589.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:ACCT3015: Final Exam (weighting: 50%)\nACCT6001: Final exam (weighting: 60%)\nAERO2705: Group project designed by Optus (weighting: 30%)\nAERO2705: Student seminar (weighting: 10%)\nCIVL6268: final exam (weighting: 65%)\n
+DTSTART:20201130T000000Z
+SUMMARY:Your final exams
+UID:961eb7bb-c9c5-4b06-890a-3e004c4290ee@961e.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:ACCT6001: Individual assignment (weighting: 20%)\n
 DTSTART:20200928T000000Z
 SUMMARY:Week 6 Assessments
-UID:e033af08-a5e3-47aa-b64b-477b1de65dff@e033.org
+UID:8fa8fa3c-7fe1-4bac-aa6a-2ddba9e7b66c@8fa8.org
 END:VEVENT
 BEGIN:VEVENT
-DESCRIPTION:Weekly tutorial activity
-DTSTART:20200924T000000Z
-SUMMARY:AMME4710: Tutorial Activity: Week 5 (weighting: 1.67%)
-UID:6bace914-ecfe-435c-b700-11c3a83bb064@6bac.org
+DESCRIPTION:ACCT3015: Mid-semester exam (weighting: 25%)\nACCT6001: Mid-semester exam (weighting: 20%)\nAERO2705: Assignment 2 (weighting: 20%)\nEDUP4067: Developing an online STEM resource- design a web-based resource and report. (weighting: 50%)\n
+DTSTART:20201005T000000Z
+SUMMARY:Week 7 Assessments
+UID:02b10a88-1ef0-441f-8a4c-a1cf790c08b5@02b1.org
 END:VEVENT
 BEGIN:VEVENT
-DESCRIPTION:AMME4710: Major Project Proposal (weighting: 0%)\n
-DTSTART:20201026T000000Z
-SUMMARY:Week 9 Assessments
-UID:cae90873-0df0-4591-8d6e-47e1aad192a9@cae9.org
+DESCRIPTION:Students are required to solve theoretic questions in attitude dynamics.
+DTSTART:20201106T000000Z
+SUMMARY:AERO2705: Assignment 3 (weighting: 20%)
+UID:43a7b2f9-c773-487f-97ee-1dad433b427c@43a7.org
 END:VEVENT
 BEGIN:VEVENT
-DESCRIPTION:Proposal for group major project
-DTSTART:20201030T000000Z
-SUMMARY:AMME4710: Major Project Proposal (weighting: 0%)
-UID:3d8b10de-743b-4b40-aa74-3d2fe3d66684@3d8b.org
+DESCRIPTION:Web-based resource.
+DTSTART:20201014T000000Z
+SUMMARY:EDUP4067: Developing an online STEM resource- design a web-based resource and report. (weighting: 50%)
+UID:ba9ef8ea-866c-491a-9762-8483236cbd6d@ba9e.org
 END:VEVENT
 BEGIN:VEVENT
-DESCRIPTION:Written task
-DTSTART:20201025T000000Z
-SUMMARY:ACCT3400: Individual Statement (weighting: 20%)
-UID:cd257298-49ff-488b-8809-1fb3021047e9@cd25.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Assignment report and code\, submitted via Turnitin and email
-DTSTART:20200920T000000Z
-SUMMARY:AMME4710: Assignment 1 (weighting: 20%)
-UID:66baa205-622a-440d-8104-1170bd757bc1@66ba.org
+DESCRIPTION:Closed book exam covering topics 1-6
+DTSTART:20201012T000000Z
+SUMMARY:ACCT6001: Mid-semester exam (weighting: 20%)
+UID:f9c76ba7-065f-4c1a-85dd-828b2b5922f6@f9c7.org
 END:VEVENT
 END:VCALENDAR
