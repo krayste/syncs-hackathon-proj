@@ -8,6 +8,7 @@ from django.template.loader import render_to_string
 import os
 from wsgiref.util import FileWrapper
 
+import utils.md2pdf as pdf
 
 def assessments(request):
     test_db = DB_Unit.objects.get(code="MECH2400")
@@ -50,6 +51,11 @@ def generate(request):
         }
         assessments_html = render_to_string(
             'assessment_disp.html', context)
+
+        # Do make pdf stuff
+        assessment_list = pdf.order_ass(list_of_units)
+        md_string = pdf.create_md_string(assessment_list)
+        pdf.string_to_pdf(md_string)
 
         return HttpResponse(assessments_html)
 

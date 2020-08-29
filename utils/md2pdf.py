@@ -58,5 +58,5 @@ def create_md_string(list_of_assessments):
 	return string
 
 def string_to_pdf(markdown_string):
-	output = pypandoc.convert_text(markdown_string, 'pdf', outputfile="../output.pdf", format="md", extra_args=['-H','../static_files/options.sty'])
+	output = pypandoc.convert_text(markdown_string, 'pdf', outputfile="static_files/output.pdf", format="md", extra_args=['-H','static_files/options.sty'])
 	return
