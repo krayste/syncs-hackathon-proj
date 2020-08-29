@@ -56,7 +56,7 @@ def generate(request):
         # Save a pdf to static files
         assessment_list = pdf.order_ass(list_of_units)
         md_string = pdf.create_md_string(assessment_list)
-        pdf.string_to_pdf(md_string)
+        # pdf.string_to_pdf(md_string)
 
         # Save an ics to static files
         event.event_generator(list_of_units)
