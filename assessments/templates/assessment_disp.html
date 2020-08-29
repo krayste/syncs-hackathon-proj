@@ -37,6 +37,11 @@
 
                 {% endif %}
             {% endfor %}
+            <div>
+            <hr/>
+            <a id="pdfbutton" type="submit" href="{% url 'send_pdf_file' %}" role= "button" name="pdfbutton" value="selected" class="btn btn-primary btn-lg">Download as PDF</a>
+            <a id="pdfbutton" type="submit" href="{% url 'send_pdf_file' %}" role= "button" name="pdfbutton" value="selected" class="btn btn-primary btn-lg">Download as ICS</a>
+            </div>
         </div>
         <!-- Content tab -->
         <div id="folder-content" class="folder" style="display: none;">
@@ -56,6 +61,11 @@
                     {% endfor %}
                 </div>
             {% endfor %}
+            <hr/>
+            <!-- PUT CONTENT DOWNLOAD HERE
+            <div> 
+                <a id="pdfbutton" type="submit" href="{% url 'send_pdf_file' %}" role= "button" name="pdfbutton" value="selected" class="btn btn-primary btn-lg">Download</a> 
+            </div>-->
         </div>
     </div>
     <div class="col-md-2"></div>

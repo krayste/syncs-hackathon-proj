@@ -2,7 +2,7 @@
 
 {% block head_content %}
 {% load static %}
-<title>Product Name</title>
+<title>SemSum - Your semester at a glance</title>
 <link rel="stylesheet" href="{% static 'assessments_styles.css' %}">
 {% endblock %}
 
@@ -28,9 +28,9 @@
                 <div class="col-md-2"></div>
               </div>
             </div>
-
+          <div class="text-center mt-5">
             <button id="generatebutton" type="submit" name="generatebutton" value="selected" class="btn btn-primary btn-lg">Generate</button>
-
+          </div>
             </fieldset>
 
             <!-- Folder with tabs -->
@@ -38,9 +38,7 @@
 
             </div>
     </form>
-    <div> 
-        <a id="pdfbutton" type="submit" href="{% url 'send_pdf_file' %}" role= "button" name="pdfbutton" value="selected" class="btn btn-primary btn-lg">Download</a>
-    </div>
+    
 </body>
 {% endblock %}
 
