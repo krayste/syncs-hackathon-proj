@@ -119,6 +119,10 @@ class Assessment:
             else:
                 ass_dict[0].append(ass)
 
+        # sort the weekly events by dates (if they exist)
+        for key in sorted(ass_dict.keys()):
+            ass_dict[key] = sorted(ass_dict[key])
+
         return ass_dict
 
     def __repr__(self):
