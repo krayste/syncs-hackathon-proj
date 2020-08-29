@@ -9,7 +9,7 @@
 {% block body_content %}
 <body>
 
-    <form method="post" action="/create" class="form-horizontal" id="timetable-form">
+    <form method="post" action="/generate" class="form-horizontal" id="assessments-form">
             {% csrf_token %}
 
             <!-- Unit dropdown -->
@@ -27,6 +27,9 @@
                 </div>
               </div>
             </div>
+
+            <button id="generatebutton" type="submit" name="generatebutton" value="selected" class="btn btn-primary btn-lg">Generate</button>
+
             </fieldset>
     </form>
 
