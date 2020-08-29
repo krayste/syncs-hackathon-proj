@@ -14,10 +14,10 @@
 
             <!-- Unit dropdown -->
             <fieldset>
-            <div class="container col-md-12 config-container">
+            <div class="container col-md-12">
               <div class="row">
-                <div class="col-md-1"></div>
-                <div class="col-md-10" id="unit-select-container">
+                <div class="col-md-2"></div>
+                <div class="col-md-8" id="unit-select-container">
                   <h2 class="mb-4">Choose your units</h2>
                   <select action="/unit_select" name="units" class="selectpicker" id="unit-select" data-none-results-text="No results matched" data-live-search-placeholder="Search..." data-live-search="true" data-display="static" data-dropup-auto="false" multiple="multiple" data-width="100%" title="Select your units...">
                     {% for unit in unit_list %}
@@ -25,12 +25,33 @@
                     {% endfor %}
                   </select>
                 </div>
+                <div class="col-md-2"></div>
               </div>
             </div>
 
             <button id="generatebutton" type="submit" name="generatebutton" value="selected" class="btn btn-primary btn-lg">Generate</button>
 
             </fieldset>
+
+            <div class="container col-md-12">
+              <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8 folder">
+                    <ul class="nav nav-tabs">
+                      <li class="nav-item">
+                        <a class="nav-link active" href="#">Assessments</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Content</a>
+                      </li>
+                    </ul>
+                    <div id="folder-content">
+
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+              </div>
+          </div>
     </form>
 
 </body>

@@ -21,3 +21,15 @@
 .dropdown-toggle{
   white-space: normal !important;
 }
+
+.folder{
+
+}
+
+#folder-content{
+    border-right: 1px solid lightgrey;
+    border-left: 1px solid lightgrey;
+    border-bottom: 1px solid lightgrey;
+    padding: 40px;
+}
+
