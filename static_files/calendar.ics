@@ -2,81 +2,75 @@ BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:The Null Pointers
 BEGIN:VEVENT
-DESCRIPTION:Students are required to solve theoretic questions in orbital mechanics.
-DTSTART:20201016T000000Z
-SUMMARY:AERO2705: Assignment 2 (weighting: 20%)
-UID:9c17bd87-6488-47aa-b2ca-4f627aa5abeb@9c17.org
+DESCRIPTION:Written exam
+DTSTART:20201012T000000Z
+SUMMARY:ACCT2011: Mid-semester exam (weighting: 20%)
+UID:1e184246-0e87-410e-9f29-aa4f232f9409@1e18.org
 END:VEVENT
 BEGIN:VEVENT
-DESCRIPTION:Unit of work
-DTSTART:20200917T000000Z
-SUMMARY:EDUP4067: Developing a STEM integrated STEM unit of work (weighting: 50%)
-UID:b7f6e146-b010-459e-8c75-74807d42c71e@b7f6.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:ACCT3015: Assignment (weighting: 25%)\n
-DTSTART:20201116T000000Z
-SUMMARY:Week 12 Assessments
-UID:169ea657-e2e3-4958-afe5-23e2e1d1c341@169e.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Each group will develop a space system and submit a report within 20 pages.
-DTSTART:20201211T000000Z
-SUMMARY:AERO2705: Group project designed by Optus (weighting: 30%)
-UID:e962b386-085f-4c00-acf2-5fc396e3bb6d@e962.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Students are required to solve theoretic questions in rocket dynamics.
-DTSTART:20200918T000000Z
-SUMMARY:AERO2705: Assignment 1 (weighting: 20%)
-UID:2cb889dd-8b35-43e6-86a7-8c19a194a1b6@2cb8.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:AERO2705: Assignment 1 (weighting: 20%)\nEDUP4067: Developing a STEM integrated STEM unit of work (weighting: 50%)\n
-DTSTART:20200914T000000Z
-SUMMARY:Week 4 Assessments
-UID:60016d01-0fe7-4366-8d95-26fa20b1da48@6001.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:AERO2705: Assignment 3 (weighting: 20%)\n
-DTSTART:20201102T000000Z
-SUMMARY:Week 10 Assessments
-UID:0589de7e-eea0-41c1-93b4-ec39af2375b0@0589.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:ACCT3015: Final Exam (weighting: 50%)\nACCT6001: Final exam (weighting: 60%)\nAERO2705: Group project designed by Optus (weighting: 30%)\nAERO2705: Student seminar (weighting: 10%)\nCIVL6268: final exam (weighting: 65%)\n
-DTSTART:20201130T000000Z
-SUMMARY:Your final exams
-UID:961eb7bb-c9c5-4b06-890a-3e004c4290ee@961e.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:ACCT6001: Individual assignment (weighting: 20%)\n
-DTSTART:20200928T000000Z
-SUMMARY:Week 6 Assessments
-UID:8fa8fa3c-7fe1-4bac-aa6a-2ddba9e7b66c@8fa8.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:ACCT3015: Mid-semester exam (weighting: 25%)\nACCT6001: Mid-semester exam (weighting: 20%)\nAERO2705: Assignment 2 (weighting: 20%)\nEDUP4067: Developing an online STEM resource- design a web-based resource and report. (weighting: 50%)\n
+DESCRIPTION:ACCT2011: Mid-semester exam (weighting: 20%)\nACCT3011: Mid-session exam (weighting: 20%)\n
 DTSTART:20201005T000000Z
 SUMMARY:Week 7 Assessments
-UID:02b10a88-1ef0-441f-8a4c-a1cf790c08b5@02b1.org
+UID:88a59f69-17e2-4812-8c57-f8b148716d71@88a5.org
 END:VEVENT
 BEGIN:VEVENT
-DESCRIPTION:Students are required to solve theoretic questions in attitude dynamics.
-DTSTART:20201106T000000Z
-SUMMARY:AERO2705: Assignment 3 (weighting: 20%)
-UID:43a7b2f9-c773-487f-97ee-1dad433b427c@43a7.org
+DESCRIPTION:Written task
+DTSTART:20201102T000000Z
+SUMMARY:ACCT2011: Individual assignment (weighting: 20%)
+UID:27306563-f547-464f-bdf4-a52c67e326f9@2730.org
 END:VEVENT
 BEGIN:VEVENT
-DESCRIPTION:Web-based resource.
-DTSTART:20201014T000000Z
-SUMMARY:EDUP4067: Developing an online STEM resource- design a web-based resource and report. (weighting: 50%)
-UID:ba9ef8ea-866c-491a-9762-8483236cbd6d@ba9e.org
+DESCRIPTION:ACCT2011: Individual assignment (weighting: 20%)\nACCT3011: Group assignment (weighting: 10%)\n
+DTSTART:20201102T000000Z
+SUMMARY:Week 10 Assessments
+UID:c6133bf9-fa18-4f00-b215-8389e336cb28@c613.org
 END:VEVENT
 BEGIN:VEVENT
-DESCRIPTION:Closed book exam covering topics 1-6
-DTSTART:20201012T000000Z
-SUMMARY:ACCT6001: Mid-semester exam (weighting: 20%)
-UID:f9c76ba7-065f-4c1a-85dd-828b2b5922f6@f9c7.org
+DESCRIPTION:ACCT2019: SAP assignment (weighting: 15%)\n
+DTSTART:20201109T000000Z
+SUMMARY:Week 11 Assessments
+UID:a361f791-8ff7-4f61-8343-1ffb2daead24@a361.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Case study
+DTSTART:20201112T000000Z
+SUMMARY:ACCT2019: SAP assignment (weighting: 15%)
+UID:4172b383-058d-4cde-a4fc-75a575586674@4172.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Written and numerical questions
+DTSTART:20201013T000000Z
+SUMMARY:ACCT3011: Mid-session exam (weighting: 20%)
+UID:d5d132e3-e757-48b0-86a7-28ed6f66565d@d5d1.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:ACCT3011: Individual Assignment (weighting: 10%)\n
+DTSTART:20200907T000000Z
+SUMMARY:Week 3 Assessments
+UID:03334aea-ac49-4edb-8f17-0852a06e964d@0333.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:ACCT1006: Mid-semester exam (weighting: 25%)\n
+DTSTART:20201019T000000Z
+SUMMARY:Week 8 Assessments
+UID:adfe4813-a2e9-48bd-a221-d6cd6ef276fd@adfe.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Written task
+DTSTART:20200911T000000Z
+SUMMARY:ACCT3011: Individual Assignment (weighting: 10%)
+UID:03c404c9-a6b2-48d1-a9aa-f6534c05ad7f@03c4.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Written task
+DTSTART:20201105T000000Z
+SUMMARY:ACCT3011: Group assignment (weighting: 10%)
+UID:84371139-ddb7-4977-a3d1-5feb26758bf5@8437.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:ACCT1006: Final exam (weighting: 50%)\nACCT2011: Final exam (weighting: 50%)\nACCT2019: Final exam (weighting: 50%)\nACCT3011: Final exam (weighting: 50%)\n
+DTSTART:20201130T000000Z
+SUMMARY:Your final exams
+UID:3f23bd90-3ec0-4efb-8d34-23d3e8864d70@3f23.org
 END:VEVENT
 END:VCALENDAR
