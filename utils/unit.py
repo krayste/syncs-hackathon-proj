@@ -46,6 +46,13 @@ class Assessment:
         self.is_final = False
         self.length = None 
 
+    def __lt__(self, other):
+        if self.due_date == None:
+            return True
+        elif other.due_date == None:
+            return False
+        return arrow.get(self.due_date, "DD MMM YYYY") < arrow.get(other.due_date, "DD MMM YYYY")
+
     def set_unit(self, unit):
         ''' Set reference back to unit object parent '''
         self.unit = unit
@@ -75,7 +82,7 @@ class Assessment:
         start = arrow.get("24-08-2020", "DD-MM-YYYY")
         midsem_break = 8
 
-        if self.due_str.startswith("Week"):
+        if self.due_str.startswith("Week "):
             return int(self.due_str.split()[1])
 
         # in case it is an ongoing assessment
@@ -105,16 +112,12 @@ class Assessment:
             if ass.is_final:
                 ass_dict[13].append(ass)
 
-            elif ass.due_str.startswith("Week"):
+            elif ass.due_str.startswith("Week "):
                 week = int(ass.due_str.split()[1])
                 ass_dict[week].append(ass)
 
             else:
                 ass_dict[0].append(ass)
-
-        for key in ass_dict.keys():
-            print(key)
-            print(ass_dict[key])
 
         return ass_dict
 
@@ -122,7 +125,8 @@ class Assessment:
         string = ""
         string += "Type: " + self.type_str + "\n"
         string += "Desc: " + self.description_title + "\n"
-        string += "Body: " + self.description_body + "\n"
+        if self.description_body:
+            string += "Body: " + self.description_body + "\n"
         string += "Weight: " + self.weight + "\n"
         string += "Due: " + self.due_str + "\n"
         if self.due_date:
