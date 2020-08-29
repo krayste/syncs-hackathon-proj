@@ -1,0 +1,73 @@
+
+
+<div class="container col-md-12">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+
+        <!-- Tabs -->
+        <ul class="nav nav-tabs" id="folder-tab">
+          <li class="nav-item">
+            <a class="nav-link active" id="assessment-tab" href="#">Assessments</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="content-tab" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Content</a>
+            <div class="dropdown-menu">
+                {% for u in list_of_units %}
+                    <a class="dropdown-item content-unit-dropdown" data-unit="{{u.code}}">{{u.code}}</a>
+                {% endfor %}
+            </div>
+          </li>
+        </ul>
+        <!-- Assessments tab -->
+        <div id="folder-assessment" class="folder">
+            {% for key, value in assessments_dict.items %}
+                {% if forloop.first %}<h5>Ongoing Assessments</h5>
+                {% elif forloop.last%}<hr/><h5>Final Exam</h5>
+
+                    {% for a in value %}
+                    <p class="mb-0">
+                        {{a.unit.code}}: {{a.type_str}} {{a.description_title}}
+                        <span class="text-muted">
+                            {% if a.due_date != None %}{{a.due_date}}{% endif %} {{a.weight}}
+                        </span>
+                    </p>
+                    {% endfor %}
+
+                {% elif value|length > 0 %}<hr/><h5>Week {{key}}</h5>
+
+                    {% for a in value %}
+                    <p class="mb-0">
+                        {{a.unit.code}}: {{a.type_str}} {{a.description_title}}
+                        <span class="text-muted">
+                            {% if a.due_date != None %}{{a.due_date}}{% endif %} {{a.weight}}
+                        </span>
+                    </p>
+                    {% endfor %}
+
+                {% endif %}
+            {% endfor %}
+        </div>
+        <!-- Content tab -->
+        <div id="folder-content" class="folder" style="display: none;">
+            {% for u in list_of_units %}
+                <div id="folder-content-{{u.code}}" class="folder-content-unit" style="display: none;">
+                    <h5>{{u.code}}</h5>
+                    {% for s in u.list_of_schedules %}
+                        <hr/><h5>{{s.wk_str}}</h5>
+                        {% for t in s.list_of_topics %}
+                            <p class="mb-0">
+                                {{t.topic_str}}
+                                <span class="text-muted">
+                                    {{t.learning_str}}
+                                </span>
+                            </p>
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>

@@ -74,8 +74,15 @@ class DB_Unit(models.Model):
             assessment_obj.description_body = assessment_db.description_body
             assessment_obj.weight = assessment_db.weight
             assessment_obj.due_str = assessment_db.due_str
-            assessment_obj.due_date = assessment_db.due_date
             assessment_obj.is_final = assessment_db.is_final
+            print("Here")
+            print(assessment_obj.due_str.lower())
+            if ('formal' in assessment_obj.due_str.lower()):
+                unit_obj.has_final = True
+                assessment_obj.is_final = True
+                print("Has a final exam!!!")
+
+            assessment_obj.due_date = assessment_db.due_date
             assessment_obj.length = assessment_db.length
             unit_obj.list_of_assessments.append(assessment_obj)
 
@@ -91,7 +98,6 @@ class DB_Unit(models.Model):
                 topic_obj.topic_str = topic_db.topic_str
                 topic_obj.learning_str = topic_db.learning_str
                 schedule_obj.list_of_topics.append(topic_obj)
-
         return unit_obj
 
 

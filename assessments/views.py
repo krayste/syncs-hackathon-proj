@@ -36,6 +36,7 @@ def generate(request):
 
         assessments_dict = Assessment.create_dictionary(
             list_of_assessments)
+        print(assessments_dict)
 
         context = {"assessments_dict": assessments_dict}
         assessments_html = render_to_string(
