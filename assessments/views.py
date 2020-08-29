@@ -5,6 +5,10 @@ from utils.unit import Assessment
 import utils.identify_finals as i_f
 from django.template.loader import render_to_string
 
+import os
+from wsgiref.util import FileWrapper
+
+import utils.md2pdf as pdf
 
 def assessments(request):
     test_db = DB_Unit.objects.get(code="MECH2400")
@@ -47,4 +51,22 @@ def generate(request):
         assessments_html = render_to_string(
             'assessment_disp.html', context)
 
+        # Do make pdf stuff
+        assessment_list = pdf.order_ass(list_of_units)
+        md_string = pdf.create_md_string(assessment_list)
+        pdf.string_to_pdf(md_string)
+
         return HttpResponse(assessments_html)
+
+
+def send_pdf_file(request):
+    """
+    Send a file through Django without loading the whole file into
+    memory at once. The FileWrapper will turn the file object into an
+    iterator for chunks of 8KB.
+    """
+    filename = "static_files/output.pdf"  # Select your file here.
+    wrapper = FileWrapper(open(filename, 'rb'))
+    response = HttpResponse(wrapper, content_type='application/pdf/force-download')
+    response['Content-Length'] = os.path.getsize(filename)
+    return response

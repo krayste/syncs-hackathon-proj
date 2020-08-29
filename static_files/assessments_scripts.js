@@ -47,6 +47,35 @@ $("#assessments-form").submit(function(e) {
          });
 });
 
+
+// $("#pdfbutton").click(function(e) {
+//     e.preventDefault(); // avoid to execute the actual submit of the form.
+//     var form = $(this);
+//     var url = form.attr('action');
+//     $.ajaxSetup({
+//         headers: { "X-CSRFToken": getCookie("csrftoken")}
+//     });
+//     $.ajax({
+//            type: "POST",
+//            url: url,
+//            dataType: 'pdf',
+
+//             // handle a successful response
+//             success : function(data) {
+//                 console.log("Success lmao")
+//             },
+
+//             // handle a non-successful response
+//             error : function(xhr,errmsg,err) {
+//                 $('#results').html("<div class='alert-box alert radius' data-alert>Oops! We have encountered an error: "+errmsg+
+//                     " <a href='#' class='close'>&times;</a></div>"); // add the error to the dom
+//                 console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+//             }
+//          });
+// });
+
+
+
 // prevent automatic selection events across browsers (fixed Safari issue)
 function pauseEvent(e){
     if(e.stopPropagation) e.stopPropagation();

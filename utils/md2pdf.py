@@ -39,7 +39,6 @@ def order_ass(units):
 #string = f.readlines()
 #string = "".join(string)
 
-#output = pypandoc.convert_text(string, 'pdf', outputfile="../output.pdf", format="md", extra_args=['-H','../static_files/options.sty'])
 
 
 
@@ -48,12 +47,16 @@ def create_md_string(list_of_assessments):
 	string = '''| **Subject** | **Type**| **Description** | **Weighting** | **Due Date** |
 	|==|==|==|==|==|\n'''
 	for assessment in list_of_assessments:
-		new_line = "| "
-		new_line += assessment.unit.code + " | "
-		new_line += assessment.type_str + " | "
-		new_line += assessment.description_title + " | "
-		new_line += assessment.weight + " | "
-		new_line += assessment.due_str + " | "
+		new_line = "|\n"
+		new_line += "| " +assessment.unit.code + " |\n"
+		new_line += "| " +assessment.type_str + " |\n"
+		new_line += "| " +assessment.description_title + " |\n"
+		new_line += "| " +assessment.weight + " |\n"
+		new_line += "| " +assessment.due_str + " |\n"
 		string += new_line + "\n" 
 
 	return string
+
+def string_to_pdf(markdown_string):
+	output = pypandoc.convert_text(markdown_string, 'pdf', outputfile="static_files/output.pdf", format="md", extra_args=['-H','static_files/options.sty'])
+	return
