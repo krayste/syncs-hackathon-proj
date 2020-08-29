@@ -4,4 +4,5 @@ from assessments import views
 urlpatterns = [
     path('', views.assessments, name='assessments'),
     path('generate', views.generate, name='generate'),
+    path('output.pdf', views.send_pdf_file, name='send_pdf_file'),
 ]

@@ -5,6 +5,9 @@ from utils.unit import Assessment
 import utils.identify_finals as i_f
 from django.template.loader import render_to_string
 
+import os
+from wsgiref.util import FileWrapper
+
 
 def assessments(request):
     test_db = DB_Unit.objects.get(code="MECH2400")
@@ -49,3 +52,16 @@ def generate(request):
             'assessment_disp.html', context)
 
         return HttpResponse(assessments_html)
+
+
+def send_pdf_file(request):
+    """
+    Send a file through Django without loading the whole file into
+    memory at once. The FileWrapper will turn the file object into an
+    iterator for chunks of 8KB.
+    """
+    filename = "static_files/output.pdf"  # Select your file here.
+    wrapper = FileWrapper(open(filename, 'rb'))
+    response = HttpResponse(wrapper, content_type='application/pdf/force-download')
+    response['Content-Length'] = os.path.getsize(filename)
+    return response
