@@ -1,8 +1,6 @@
 from ics import Calendar, Event
 import arrow
-
-# for testing
-from utils.unit import test_filling
+import utils.unit as u
 
 # hardcoding the start of sem 2 because we're disgusting
 start_sem = arrow.get("2020-08-24", "YYYY-MM-DD")
@@ -15,7 +13,6 @@ def event_generator(units):
 	for unit in units:
 
 		for assessment in unit.list_of_assessments:
-
 			if assessment.due_date != None:
 				e = Event()
 				e.name = unit.code + ": " + assessment.type_str
@@ -44,5 +41,27 @@ def event_generator(units):
 	with open('calendar.ics', 'w') as my_file:
 		my_file.writelines(c)
 
-units = [test_filling()]
-event_generator(units)
+def get_timestring(assessment):
+	''' Returns an arrow-formatted timestring for a assessment object '''
+	if assessment.due_date != None:
+		date = str(arrow.get(assessment.due_date, "DD MMM YYYY"))
+
+	elif assessment.due_str.startswith("Week"):
+		week = int(assessment.due_str.split()[1])
+		# shift by 1 to account for midsem break
+		if week > 7:
+			week += 1
+		date = str(start_sem.shift(weeks=week))
+
+	elif assessment.due_str == "Formal exam period":
+		date = str(formal_exam_period)
+
+	else:
+		# Hardcoded shifting to the end by 30 weeks
+		date = str(start_sem.shift(weeks=30))
+
+	return date
+
+if __name__ == '__main__':
+	units = [u.test_filling()]
+	event_generator(units)
