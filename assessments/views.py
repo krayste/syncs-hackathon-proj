@@ -11,6 +11,7 @@ from wsgiref.util import FileWrapper
 import utils.md2pdf as pdf
 import utils.event_generator as event
 
+
 def assessments(request):
     test_db = DB_Unit.objects.get(code="MECH2400")
     test_obj = test_db.obj()
@@ -72,9 +73,11 @@ def send_pdf_file(request):
     """
     filename = "static_files/output.pdf"  # Select your file here.
     wrapper = FileWrapper(open(filename, 'rb'))
-    response = HttpResponse(wrapper, content_type='application/pdf/force-download')
+    response = HttpResponse(
+        wrapper, content_type='application/pdf/force-download')
     response['Content-Length'] = os.path.getsize(filename)
     return response
+
 
 def send_ics_file(request):
     """
@@ -84,6 +87,7 @@ def send_ics_file(request):
     """
     filename = "static_files/calendar.ics"  # Select your file here.
     wrapper = FileWrapper(open(filename, 'rb'))
-    response = HttpResponse(wrapper, content_type='application/ics/force-download')
+    response = HttpResponse(
+        wrapper, content_type='application/ics/force-download')
     response['Content-Length'] = os.path.getsize(filename)
     return response

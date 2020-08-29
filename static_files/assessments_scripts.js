@@ -25,30 +25,36 @@ $('#folder')
 // submit timetable form using ajax
 $("#assessments-form").submit(function(e) {
     e.preventDefault(); // avoid to execute the actual submit of the form.
-    $('#folder').show();
-    //loading icon
-    $('#folder').html('<div class="lds-ring-parent"><div class="lds-ring-child"><div class="lds-ring"><div></div><div></div><div></div><div></div></div><div class="lds-ring-text my-3">Loading ...</div></div></div>');
-    scrollToLink( $('#folder'));
-    var form = $(this);
-    var url = form.attr('action');
-    $.ajax({
-           type: "POST",
-           url: url,
-           dataType: 'html',
-           data: form.serialize(), // serializes the form's elements.
 
-            // handle a successful response
-            success : function(data) {
-                $('#folder').html(data)
-            },
+    var count = $('#unit-select').val().length
+    console.log(count)
+    if(count>0){
 
-            // handle a non-successful response
-            error : function(xhr,errmsg,err) {
-                $('#results').html("<div class='alert-box alert radius' data-alert>Oops! We have encountered an error: "+errmsg+
-                    " <a href='#' class='close'>&times;</a></div>"); // add the error to the dom
-                console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
-            }
-         });
+        $('#folder').show();
+        //loading icon
+        $('#folder').html('<div class="lds-ring-parent"><div class="lds-ring-child"><div class="lds-ring"><div></div><div></div><div></div><div></div></div><div class="lds-ring-text my-3">Loading ...</div></div></div>');
+        scrollToLink( $('#folder'));
+        var form = $(this);
+        var url = form.attr('action');
+        $.ajax({
+               type: "POST",
+               url: url,
+               dataType: 'html',
+               data: form.serialize(), // serializes the form's elements.
+
+                // handle a successful response
+                success : function(data) {
+                    $('#folder').html(data)
+                },
+
+                // handle a non-successful response
+                error : function(xhr,errmsg,err) {
+                    $('#results').html("<div class='alert-box alert radius' data-alert>Oops! We have encountered an error: "+errmsg+
+                        " <a href='#' class='close'>&times;</a></div>"); // add the error to the dom
+                    console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+                }
+             });
+    }
 });
 
 // button to auto scroll down to form start
