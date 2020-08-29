@@ -11,7 +11,7 @@ $("#assessments-form").submit(function(e) {
 
             // handle a successful response
             success : function(data) {
-                $('#folder-content').html(data)
+                $('#folder').html(data)
             },
 
             // handle a non-successful response
