@@ -1,3 +1,27 @@
+// change to content tab
+$('#folder')
+.on('click', '.content-unit-dropdown', function(e){
+    e.preventDefault()
+    var unit = $(this).attr('data-unit');
+    $('#folder-assessment').hide()
+    $('.folder-content-unit').hide()
+    $('#folder-content').show()
+    $('#folder-content-'+ unit +'').show()
+    $('#assessment-tab').removeClass('active')
+    $('#content-tab').addClass('active')
+});
+
+// change to assessment tab
+$('#folder')
+.on('click', '#assessment-tab', function(e){
+    e.preventDefault()
+    $('.folder-content-unit').hide()
+    $('#folder-content').hide()
+    $('#folder-assessment').show()
+    $('#assessment-tab').addClass('active')
+    $('#content-tab').removeClass('active')
+});
+
 // submit timetable form using ajax
 $("#assessments-form").submit(function(e) {
     e.preventDefault(); // avoid to execute the actual submit of the form.

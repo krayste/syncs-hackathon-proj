@@ -39,11 +39,10 @@ def generate(request):
             i_f.identify_finals(a)
         assessments_dict = Assessment.create_dictionary(
             list_of_assessments)
-        unit_codes = [unit.code for unit in list_of_units]
 
         context = {
             "assessments_dict": assessments_dict,
-            "unit_codes": unit_codes,
+            "list_of_units": list_of_units,
         }
         assessments_html = render_to_string(
             'assessment_disp.html', context)
