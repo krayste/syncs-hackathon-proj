@@ -18,3 +18,20 @@ string = f.readlines()
 string = "".join(string)
 
 output = pypandoc.convert_text(string, 'pdf', outputfile="../output.pdf", format="md", extra_args=['-H','../static_files/options.sty'])
+
+
+
+
+def create_md_string(list_of_assessments):
+	string = '''| **Subject** | **Type**| **Description** | **Weighting** | **Due Date** |
+	|==|==|==|==|==|\n'''
+	for assessment in list_of_assessments:
+		new_line = "| "
+		new_line += assessment.unit.code + " | "
+		new_line += assessment.type_str + " | "
+		new_line += assessment.description_title + " | "
+		new_line += assessment.weight + " | "
+		new_line += assessment.due_str + " | "
+		string += new_line + "\n" 
+
+	return string
