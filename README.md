@@ -1,4 +1,5 @@
 # SemSum
+Try it here: [https://semsum.herokuapp.com/](https://semsum.herokuapp.com/)
 
 ## What is SemSum?
 Every semester, students spend countless minutes navigating their assessment schedules and what's where when for what. Confusing, right? What if you could see at a glance what you're studying every week and when you're getting tested for it?
